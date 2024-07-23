@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Using the Anthropic SDK in Electron</title>
+  </head>
+  <body>
+    <div>
+      <p>1) Enter your Anthropic API key</p>
+      <input type="text" value="" id="api-key" placeholder="Anthropic/Claude API key" />
+      <p>2) Define a message to use the Anthropic SDK with</p>
+      <textarea id="message" rows="3" placeholder="Type a message"></textarea>
+      <p>3) <button id="send" onclick="sendMessage()">Send</button></p>
+      <p>The response will be rendered below</p>
+      <div id="response">
+        <div id="empty-response">no response yet</div>
+      </div>
+    </div>
+    <script type="module" src="/src/renderer.ts"></script>
+    <script>
+      async function sendMessage() {
+        const message = document.getElementById('message').value;
+        const apiKey = document.getElementById('api-key').value;
+        const response = document.getElementById('response');
+
+        response.innerHTML = 'fetching response...';
+        
+        const anthropicSDKResponse = await window.electronAPI.triggerAnthropicSDK(apiKey, message)
+        response.innerHTML = JSON.stringify(anthropicSDKResponse, null, 2);
+      }
+    </script>
+  </body>
+</html>

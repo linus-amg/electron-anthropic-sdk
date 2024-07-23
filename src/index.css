@@ -1,0 +1,28 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  margin: auto;
+  max-width: 38rem;
+  padding: 2rem;
+}
+
+#message {
+  width: 100%;
+}
+#response {
+  display: flex;
+  border: 1px solid #CCC;
+  min-height: 200px;
+  width: 100%;
+  font-family: 'Courier New', Courier, monospace;
+  white-space: pre-wrap;
+}
+#api-key {
+  width: 100%;
+}
+
+#empty-response {
+  align-self: center;
+  margin: auto;
+  color: #999;
+}
