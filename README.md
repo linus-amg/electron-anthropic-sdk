@@ -8,7 +8,7 @@ Repository to build a working Electron distributable which includes usage of Ant
 - OS: MacOS 14.5
 - NodeJS: 18.12.1
 - Guide followed: https://www.electronforge.io/#using-templates
-- Command to get started: `npm init electron-app@latest my-app -- --template=vite-typescript`
+- Template which was used to get started: `npm init electron-app@latest my-app -- --template=vite-typescript`
 
 ## How to use locally
 1) clone this repository to your machine
